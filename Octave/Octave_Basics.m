@@ -123,11 +123,34 @@ w=zeros(1,3);
 w=rand(1,3);  
   #   0.064031   0.763642   0.072684
 
-rmat=rand(3,3)
+%  3x3 random matrix (values between 0 and 1)
+rmat=rand(3,3);
 %   0.55075   0.65376   0.35113
 %   0.52115   0.54614   0.19538
 %   0.91395   0.76627   0.46741
 
+#  Gaussien random numbers with mean = 0 and SD = 1
+w=randn(1,3);
+  #  -1.33762  -0.51750  -1.09536
 
+%  gaussian distribution with mean=-6 and SD=sqrt(10)
+w=-6+sqrt(10)*randn(1,1000);  
+  
+#  plot the histogram with 50 slices  
+hist(w,50);  
+  
+%  5x5 identity matrix  
+eye(5)  
+  
+#######################################
+##########  Help in Octave  ###########
+#######################################  
+  
+#  type help then the topic of interest as shown below  
+help rand
 
-
+  
+  
+  
+  
+  
