@@ -25,6 +25,21 @@ v=theta'*x;  %  using octave highly optimized matrix * routine.
 ########  Gradient Descent  ##########
 ######################################
 
+%  vectorized implementation
+
+%  theta = theta - alpha*delta (get all theta at once becuase delta contains all x values)
+
+%  delta = 1/m * sum_(i=1..m)[h(x)-y)*x] 
+
+
+
+
+
+
+
+
+
+
 
 
 

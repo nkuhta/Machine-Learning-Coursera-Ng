@@ -4,7 +4,7 @@
 3.  **Computing_on_Data.m**		- Matrix Multiplication, element wise arithmetic, incrementing, logic, find elements, sum, prod, floor, ceil, inverse. 
 4.  **Plotting_Data.m**		- 2D plotting, subplot, xlabel, ylabel, legend, title, imagesc matrix density plots. 
 5.  **Control_Statements.m**	- For, While, If, Functions.
-6.  **Vectorization.m**		- Vectorizing code to take advantage of highly optimized linear algebra libraries.  
+6.  **Vectorization.m**		- Vectorizing code to take advantage of highly optimized linear algebra libraries instead of control loops.  
 
 # Machine Learning References
 1.  **Machine Learning** - Stanford - Andrew Ng (Coursera)   
