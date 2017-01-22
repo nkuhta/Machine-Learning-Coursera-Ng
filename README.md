@@ -5,4 +5,3 @@
 # Machine Learning References
 1.  **Machine Learning** - Stanford - Andrew Ng (Coursera)   
     https://www.coursera.org/learn/machine-learning
-	 Trump Eat Farts!!!
