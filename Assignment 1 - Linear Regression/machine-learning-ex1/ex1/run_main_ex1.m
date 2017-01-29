@@ -51,10 +51,10 @@ fprintf("Plotting ex1data1 Data...\n");
 %  Load the data file 
 data=load('ex1data1.txt');
 
-%  x data
+%  x data (population in 10k units)
 x=data(:,1);
 
-%  y data
+%  y data (Revenue in 10k dollars units)
 y=data(:,2);
 
 %  length of dataset
@@ -71,7 +71,63 @@ plotData(x,y)
 fprintf("Figure 2 is the plotData function call.\n");
 pause;
 
-clear ; close all; clc
+close all; clc
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%########%%%%
+%%%%%%%%%%%   Part 3:  Gradient Descent  %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+fprintf("Running Gradient Descent ...\n");
+
+#  add a column of 1's to the ex1data1 x data (comma separated columns)
+x=[ones(m,1),data(:,1)]; 
+
+%  coefficient fitting parameters initialization
+theta=zeros(2,1);
+
+%  Gradient Descent Parameters
+iterations = 1500;
+alpha = 0.001;
+
+%  compute and display the initial cost
+fprintf("Initial Cost...\n");
+computeCost(x,y,theta)
+
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+
+%  Run the Gradient Descent
+theta = gradientDescent(x,y,theta,alpha,iterations);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
