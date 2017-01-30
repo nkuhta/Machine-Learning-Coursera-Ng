@@ -5,8 +5,6 @@
 4.  **computeCost.m** 	- Compute cost function J give (x,y,theta)
 5.  **gradientDescent.m**	- Compute theta linear regression coefficient array and store the J cost function value each iteration.  
 
-#   Source code found in the machine-learning-ex1\ex1 file path
-
 # Machine Learning References
 1.  **Machine Learning** - Stanford - Andrew Ng (Coursera)   
     https://www.coursera.org/learn/machine-learning
