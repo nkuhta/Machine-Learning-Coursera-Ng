@@ -14,8 +14,8 @@ J = 0;
 %               You should set J to the cost.
 
 
+#  sum the cost function
 J=sum((x*theta-y).^2)/2/m;
-
 
 
 % =========================================================================

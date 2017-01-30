@@ -18,10 +18,7 @@ J_history = zeros(num_iters, 1);  %  cost function interation values
     %
     
     theta=theta-(alpha/m*(x*theta-y)'*x)';
-    
-
-
-
+   
 
 
     % ============================================================
