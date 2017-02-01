@@ -1,5 +1,5 @@
 #   Assignment 1 - Linear Regression	
-1.  Source code found in the **machine-learning-ex1\ex1 file path**
+1.  Source code found in the **machine-learning-ex1\ex1** file path
 2.  **run_main_ex1.m** 	- Primary run file - Basic function calls, loading and plotting data, compute Cost, caculate linear regression coefficients using gradient descent.
 3.  **warmUpExercise.m**	- 5x5 Identity Matrix function. 
 4.  **plotData.m**	- Size, Length, Accessing array elements, appending/concatinating matrices/vectors, loading/saving data.
