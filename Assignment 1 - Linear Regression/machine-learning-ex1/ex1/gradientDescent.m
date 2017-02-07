@@ -17,9 +17,12 @@ J_history = zeros(num_iters, 1);  %  cost function interation values
     %       of the cost function (computeCost) and gradient here.
     %
     
-    theta=theta-(alpha/m*(x*theta-y)'*x)';
+    #  first method
+    #theta=theta-(alpha/m*(x*theta-y)'*x)';
+    
+    #  second method (use only one transpose)
+    theta=theta-(alpha/m)*x'*(x*theta-y);
    
-
 
     % ============================================================
 

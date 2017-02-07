@@ -17,11 +17,13 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
-
-    theta=theta-(alpha/m*(x*theta-y)'*x)';
-
-
-
+    #  first method
+    #theta=theta-(alpha/m*(x*theta-y)'*x)';
+    
+    #  second method (use only one transpose)
+    theta=theta-(alpha/m)*x'*(x*theta-y);
+    
+    
     % ============================================================
 
     % Save the cost J in every iteration    

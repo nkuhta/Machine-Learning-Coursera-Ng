@@ -64,7 +64,7 @@ fprintf('Running gradient descent...\n');
 
 %  Gradient Descent Parameters
 alpha = .9;
-num_iters=30;
+num_iters=60;
 alpha_vals=[.1,.5,.9];
 
 %  Initiate theta and run gradient descent
