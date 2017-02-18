@@ -57,7 +57,7 @@ pause;
 [m,n]=size(x);
 
 %  Add the constant intercept term to x
-x=[one(m,1) x];
+x=[ones(m,1) x];
 
 
 
