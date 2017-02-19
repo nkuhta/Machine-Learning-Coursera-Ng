@@ -4,6 +4,7 @@
 3.  **plotData.m**	- Find positive and negative data row index values and plot catagorical logistic data.
 4.  **costfunction.m** - Compute the cost and gradient (for each theta) for logistic regression model. 
 5.  **sigmoid.m** - sigmoid exponential function.  
+6.  **plotDecisionBoundary.m** - Plot the decision boundary using optimized theta, for some (x,y) logistic data.
 
 # Machine Learning References
 1.  **Machine Learning** - Stanford - Andrew Ng (Coursera)   

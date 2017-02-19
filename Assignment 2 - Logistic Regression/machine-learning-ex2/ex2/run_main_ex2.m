@@ -108,9 +108,11 @@ fprintf('Expected cost (approx):  0.203\n');
 fprintf('\nfminunc theta: \n');
 fprintf(' %f \n',theta);
 fprintf('Expected theta (approx):\n');
-fprintf('-25.61\n 0.206\n 0.201\n');
+fprintf(' -25.61\n 0.206\n 0.201\n');
 
-  
+%  Plot Decision Boundary
+
+plotDecisionBoundary(theta,x,y);  
 
 
 

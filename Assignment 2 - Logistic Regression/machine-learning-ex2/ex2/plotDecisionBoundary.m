@@ -1,4 +1,4 @@
-function plotDecisionBoundary(theta, X, y)
+function plotDecisionBoundary(theta, x, y)
 %PLOTDECISIONBOUNDARY Plots the data points X and y into a new figure with
 %the decision boundary defined by theta
 %   PLOTDECISIONBOUNDARY(theta, X,y) plots the data points with + for the 
@@ -9,14 +9,15 @@ function plotDecisionBoundary(theta, X, y)
 %   2) MxN, N>3 matrix, where the first column is all-ones
 
 % Plot Data
-plotData(X(:,2:3), y);
+plotData(x(:,2:3), y);
 hold on
 
-if size(X, 2) <= 3
-    % Only need 2 points to define a line, so choose two endpoints
-    plot_x = [min(X(:,2))-2,  max(X(:,2))+2];
+if size(x, 2) <= 3
+    % Only need 2 points to define a line 
+    # choose 2 x values a just beyond two endpoints of x_2
+    plot_x = [min(x(:,2))-2,  max(x(:,2))+2];
 
-    % Calculate the decision boundary line
+    % Calculate the decision boundary line, note y = x_3 here
     plot_y = (-1./theta(3)).*(theta(2).*plot_x + theta(1));
 
     % Plot, and adjust axes for better viewing
