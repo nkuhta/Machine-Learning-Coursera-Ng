@@ -65,15 +65,52 @@ initial_theta=zeros(n+1,1);
 %  Compute the cost and gradient
 [cost grad] = costFunction(initial_theta,x,y);
 
-fprintf('Cost at initial theta (zeros): %f\n', cost);
+fprintf('\nCost at initial theta (zeros): %f\n', cost);
 fprintf('Expected cost (approx): 0.693\n');
-fprintf('Gradient at initial theta (zeros): \n');
+fprintf('\nGradient at initial theta (zeros): \n');
 fprintf(' %f \n', grad);
 fprintf('Expected gradients (approx):\n -0.1000\n -12.0092\n -11.2628\n');
 
+# Compute and display cost and gradient for non-zero theta
 
+#  initial test theta values 
+test_theta=[-24; 0.2; 0.2];
+#  Compute cost and gradient 
+[cost grad] = costFunction(test_theta,x,y);
 
+fprintf('\nCost at test theta: %f\n',cost);
+fprintf('Expected cost (approx): 0.218\n');
+fprintf('\nGradient at test theta: \n');
+fprintf(' %f \n',grad);
+fprintf('Expected gradients (approx):\n 0.043 \n 2.566 \n 2.647 \n');
 
+fprintf('\n Program paused.  Press enter to continue \n');
+pause;
+
+##########################################################
+########   Part 3 - Optimize using fminunc  ##############
+##########################################################
+
+#  Use fminunc to find the optimal theta values 
+
+%  Set options for fminunc
+options = optimset('GradObj','on','MaxIter',400);
+
+%  Run fminunc to obtain optimal theta  
+#  fminunc will return optimized theta and the cost
+
+[theta, cost] = ...
+  fminunc(@(t)(costFunction(t,x,y)),initial_theta,options);
+  
+%  print theta from fminunc
+fprintf('\nCost at theta found by fminunc: %f\n',cost);
+fprintf('Expected cost (approx):  0.203\n');
+fprintf('\nfminunc theta: \n');
+fprintf(' %f \n',theta);
+fprintf('Expected theta (approx):\n');
+fprintf('-25.61\n 0.206\n 0.201\n');
+
+  
 
 
 
