@@ -56,9 +56,20 @@ pause;
 %  data (design) matrix size 
 [m,n]=size(x);
 
-%  Add the constant intercept term to x
+%  Add the 1 column to x for the constant term
 x=[ones(m,1) x];
 
+%  Initial theta values
+initial_theta=zeros(n+1,1);
+
+%  Compute the cost and gradient
+[cost grad] = costFunction(initial_theta,x,y);
+
+fprintf('Cost at initial theta (zeros): %f\n', cost);
+fprintf('Expected cost (approx): 0.693\n');
+fprintf('Gradient at initial theta (zeros): \n');
+fprintf(' %f \n', grad);
+fprintf('Expected gradients (approx):\n -0.1000\n -12.0092\n -11.2628\n');
 
 
 
