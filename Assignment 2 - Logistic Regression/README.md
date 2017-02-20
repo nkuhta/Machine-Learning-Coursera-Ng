@@ -5,6 +5,7 @@
 4.  **costfunction.m** - Compute the cost and gradient (for each theta) for logistic regression model. 
 5.  **sigmoid.m** - sigmoid exponential function.  
 6.  **plotDecisionBoundary.m** - Plot the decision boundary using optimized theta, for some (x,y) logistic data.
+7.  **predict.m** - Sigmoid probability prediction for a set of test values, computing the accuracy of the training set.   
 
 # Machine Learning References
 1.  **Machine Learning** - Stanford - Andrew Ng (Coursera)   
