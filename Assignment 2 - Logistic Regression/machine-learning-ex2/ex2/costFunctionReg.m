@@ -1,4 +1,4 @@
-function [J, grad] = costFunctionReg(theta, X, y, lambda)
+function [J, grad] = costFunctionReg(theta, x, y, lambda)
 %COSTFUNCTIONREG Compute cost and gradient for logistic regression with regularization
 %   J = COSTFUNCTIONREG(theta, X, y, lambda) computes the cost of using
 %   theta as the parameter for regularized logistic regression and the
@@ -18,8 +18,18 @@ grad = zeros(size(theta));
 %               derivatives of the cost w.r.t. each parameter in theta
 
 
+%  Cost function, with regularized lambda term
+J = -(1/m)*(y'*log(sigmoid(x*theta))+(1-y)'*log(1-sigmoid(x*theta))) ...
+     + lambda/(2*m)*theta'*theta;
 
+%  Gradient without correction
+grad = (1/m)*x'*(sigmoid(x*theta)-y);
 
+for i=2:length(grad)
+     %  add regularization correction terms, note no constant theta correction
+     grad(i)=grad(i)+lambda/m*theta(i);
+     
+end
 
 
 % =============================================================
