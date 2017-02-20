@@ -46,6 +46,7 @@ hold off;
 
 fprintf('Program paused:  Press enter to continue.\n');
 pause;
+close all;
 
 ##########################################################
 #####   Part 2 - Compute Cost and Gradient  ##############
@@ -111,10 +112,41 @@ fprintf('Expected theta (approx):\n');
 fprintf(' -25.61\n 0.206\n 0.201\n');
 
 %  Plot Decision Boundary
-
 plotDecisionBoundary(theta,x,y);  
 
+# Label Decision Boundary 
+hold on;
+xlabel('Exam 1 Score');
+ylabel('Exam 2 Score');
 
+fprintf('\n Press enter to continue to Probability and Accuracies\n');
+pause;
+
+##########################################################
+########   Part 4 - Predict and Accuracies  ##############
+##########################################################
+
+# Use logistic regression to predict the probability that a
+# student score 45 on exam 1 and score 85 on exam 2 will be admitted.
+
+% Next the training and test set accuracies will be computed
+
+# refer to predict.m code for methods
+
+%  Probability using sigmoid
+prob = sigmoid([1 45 85]*theta);
+
+fprintf(['\nFor a student with scores 45 and 85, \n' ...
+            'we predict an admission probability of %f\n'],prob);
+fprintf('Expect value: 0.775 +/- 0.002\n\n');
+
+%  Compute accuracy of training set
+p=predict(theta,x);
+
+%  Training accuracy
+fprintf('Training Accuracy: %f\n',mean(double(p==y))*100);
+fprintf('Expected Accurary (approx):  89.0\n');          
+          
 
 
 
