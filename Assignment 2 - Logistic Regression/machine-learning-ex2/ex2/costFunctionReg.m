@@ -17,10 +17,13 @@ grad = zeros(size(theta));
 %               Compute the partial derivatives and set grad to the partial
 %               derivatives of the cost w.r.t. each parameter in theta
 
+%  Squared theta term
+theta_squared = theta.*theta;
 
 %  Cost function, with regularized lambda term
 J = -(1/m)*(y'*log(sigmoid(x*theta))+(1-y)'*log(1-sigmoid(x*theta))) ...
-     + lambda/(2*m)*theta'*theta;
+     + lambda/(2*m)*sum(theta_squared(2:length(theta_squared)));
+     % note the theta_0 term is not regularized, ie. sum starts at 2. 
 
 %  Gradient without correction
 grad = (1/m)*x'*(sigmoid(x*theta)-y);

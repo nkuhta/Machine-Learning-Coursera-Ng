@@ -9,6 +9,9 @@
 #  Logistic Regression
 1.  **Assignment 2 - Logistic Regression**  - Main source code folder
 
+#  Multi-class Classification and Neural Networks
+1.  **Assignment 3 - Multi-class Classification and Neural Networks **  - Main source code folder
+
 # Machine Learning References
 1.  **Machine Learning** - Stanford - Andrew Ng (Coursera)   
     https://www.coursera.org/learn/machine-learning
