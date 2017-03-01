@@ -48,10 +48,18 @@ J = -(1/m)*(y'*log(sigmoid(x*theta))+(1-y)'*log(1-sigmoid(x*theta))) ...
 %  Gradient without correction
 grad = (1/m)*x'*(sigmoid(x*theta)-y);
 
-for i=2:length(grad)
-     %  add regularization correction terms, note no constant theta correction
-     grad(i)=grad(i)+lambda/m*theta(i);
-end
+%  only use correction terms for theta_1 onward
+theta_mod=[0;theta(2:length(theta))];
+
+%  add lambda correction theta terms to the gradient 
+grad=grad+lambda*theta_mod/m;
+
+%  can also use the for loop below, but it's slower
+
+%for i=2:length(grad)
+%     %  add regularization correction terms, note no constant theta correction
+%     grad(i)=grad(i)+lambda/m*theta(i);
+%end
 
 
 

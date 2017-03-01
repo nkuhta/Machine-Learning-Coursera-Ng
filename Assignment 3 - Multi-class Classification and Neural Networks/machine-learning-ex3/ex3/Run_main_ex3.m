@@ -73,6 +73,47 @@ fprintf(' %f \n', grad);
 fprintf('\nExpected gradients:\n');
 fprintf(' 0.146561\n -0.548558\n 0.724722\n 1.398003\n');
 
+fprintf('Program paused: Press enter to continue to One-vs-All');
+pause;
+
+####################################################################
+################  Part 2b:  One-vs-All Training  ###################
+####################################################################
+
+fprintf('\nTraining One-vs-All Logistic Regression...\n');
+
+lambda=0.1;
+
+%  run the One-vs-All function to calculate the optimized total theta matrix
+[all_theta] = oneVsAll(X, y, num_labels, lambda);
+
+fprintf('Program paused: Press enter to continue.\n');
+pause;
+
+####################################################################
+################  Part 3:  One-vs-All Prediction  ##################
+####################################################################
+
+pred = predictOneVsAll(all_theta, X);
+
+fprintf('\nTraining Set Accuracy: %f\n',mean(pred==y)*100);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -49,7 +49,23 @@ X = [ones(m, 1) X];
 %                 initial_theta, options);
 %
 
+%  set fminunc options
+options = optimset('GradObj', 'on', 'MaxIter', 50);
 
+%  One-vs-All loop over each K-value seting y==K to make it one-vs-all
+for c = 1:num_labels
+  
+    initial_theta = zeros(n+1,1);
+    
+    %  find the kth optimized theta values 
+    [theta] = ...
+      fmincg(@(t)(lrCostFunction(t,X,(y==c),lambda)), ...
+         initial_theta,options);
+    
+    %  make the kth optimized theta the kth row of all_theta
+    all_theta(c,:) = theta';
+  
+end
 
 
 
