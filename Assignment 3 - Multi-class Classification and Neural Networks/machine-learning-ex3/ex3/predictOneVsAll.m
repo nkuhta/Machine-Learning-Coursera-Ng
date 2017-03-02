@@ -30,10 +30,12 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+%  Total sigmoid probability model value with m by k dimensionality
+Tot_Prob = sigmoid(X*all_theta');
 
-A=sigmoid(X*all_theta');
-
-p=max(A,[],1);
+%  probability and p = index array value (=K) of the largest column value
+%  the largest probability value is the most likely k value 
+[prob,p] = max(Tot_Prob,[],2);
 
 
 
