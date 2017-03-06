@@ -21,12 +21,30 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+% Add ones to the X data matrix
+X = [ones(m, 1) X];
+
+%  neural network input vector
+a1 = X;
+
+%  layer 2 nn vector
+z2 = a1*Theta1';
+a2 = sigmoid(z2);
+
+% Add ones to the a2 data matrix
+a2 = [ones(m, 1) a2];
+
+% layer 3 (prediction) nn vectors 
+z3 = a2*Theta2';
+a3 = sigmoid(z3);
 
 
+%  Tot_Prob Matrix = a3 matrix (5000 by 10 matrix)  
+Tot_Prob=a3;
 
-
-
-
+%  p = index value for maximum probability for each Tot_Prob input row
+%  p = neural network predicted output array
+[prob,p] = max(Tot_Prob,[],2);
 
 
 % =========================================================================

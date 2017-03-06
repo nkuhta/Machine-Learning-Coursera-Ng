@@ -8,9 +8,11 @@
 
 #  Logistic Regression
 1.  **Assignment 2 - Logistic Regression**  - Main source code folder
+2.  **Topics**	- Loading and plotting logistical data, compute cost and gradient, compute and plot decision boundaries, implement regularized logistic regression. 
 
 #  Multi-class Classification and Neural Networks
 1.  **Assignment 3 - Multi-class Classification and Neural Networks**  - Main source code folder
+2.  **Topics**	- Loading and plotting handwriting data, compute regularized cost and gradient, one-vs-all algorithm implementation, accuracy, neural network accuracy testing.   
 
 # Machine Learning References
 1.  **Machine Learning** - Stanford - Andrew Ng (Coursera)   
