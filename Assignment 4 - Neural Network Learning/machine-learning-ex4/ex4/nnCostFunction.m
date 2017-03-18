@@ -21,9 +21,12 @@ Theta1 = reshape(nn_params(1:hidden_layer_size * (input_layer_size + 1)), ...
 
 Theta2 = reshape(nn_params((1 + (hidden_layer_size * (input_layer_size + 1))):end), ...
                  num_labels, (hidden_layer_size + 1));
-
+                 
 % Setup some useful variables
 m = size(X, 1);
+
+% Add ones to the X data matrix
+X = [ones(m, 1) X];
          
 % You need to return the following variables correctly 
 J = 0;
@@ -62,17 +65,39 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
+z2 = X*Theta1';
+a2 = sigmoid(z2);
 
+% Add ones to the a2 data matrix
+a2 = [ones(size(a2,1),1) a2];
 
+z3 = a2*Theta2';
+h = sigmoid(z3);
 
+%for i=1:m
+%  for k=1:num_labels  
+%
+%    J = J -(1/m)*(y(k)*log(h(i,k))+(1-y(k))*log(1-h(i,k));
+%   
+%  end
+%end
 
+%  new y matrix needed for multi-valued outputs
 
+yNew = zeros(num_labels,size(y));
 
+for i=1:size(y)
+    
+    yNew(y(i),i)=1;
+  
+end
 
-
-
-
-
+for i=1:size(y)
+  for k=1:num_labels    
+    
+      J = J + (-1/m)*(yNew(k,i)*log(h(i,k))+(1-yNew(k,i))*log(1-h(i,k)));
+  end
+end
 
 
 
