@@ -72,18 +72,11 @@ a2 = sigmoid(z2);
 a2 = [ones(size(a2,1),1) a2];
 
 z3 = a2*Theta2';
+
+%  h = output prediction
 h = sigmoid(z3);
 
-%for i=1:m
-%  for k=1:num_labels  
-%
-%    J = J -(1/m)*(y(k)*log(h(i,k))+(1-y(k))*log(1-h(i,k));
-%   
-%  end
-%end
-
 %  new y matrix needed for multi-valued outputs
-
 yNew = zeros(num_labels,size(y));
 
 for i=1:size(y)
@@ -93,12 +86,27 @@ for i=1:size(y)
 end
 
 for i=1:size(y)
-  for k=1:num_labels    
+  for k=1:num_labels  
     
+      %  cost function (without regularization)
       J = J + (-1/m)*(yNew(k,i)*log(h(i,k))+(1-yNew(k,i))*log(1-h(i,k)));
+      
   end
 end
 
+%  Theta1 regularization
+for j=1:hidden_layer_size  %  1 to 25
+  for k=1:input_layer_size   %  1 to 400
+    J = J + lambda/(2*m)*Theta1(j,k+1)^2;
+  end
+end
+
+%  Theta2 regularization
+for j=1:hidden_layer_size  %  1 to 25
+  for k=1:num_labels   %  1 to 10
+    J = J + lambda/(2*m)*Theta2(k,j+1)^2;
+  end
+end
 
 
 
