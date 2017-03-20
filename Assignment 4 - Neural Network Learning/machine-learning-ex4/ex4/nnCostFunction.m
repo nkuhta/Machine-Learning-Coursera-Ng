@@ -108,7 +108,14 @@ for j=1:hidden_layer_size  %  1 to 25
   end
 end
 
+%  Use backpropagation to calculate Theta_grad parameters
 
+%  output delta
+delta3 = h-y;
+
+size(z3)
+
+delta2 = Theta2'*delta3.*sigmoidgradient(z2);
 
 
 
