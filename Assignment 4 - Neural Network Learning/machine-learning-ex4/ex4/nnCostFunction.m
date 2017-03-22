@@ -85,6 +85,9 @@ for i=1:size(y)
   
 end
 
+%size(yNew)
+%size(a2)
+
 for i=1:size(y)
   for k=1:num_labels  
     
@@ -111,14 +114,29 @@ end
 %  Use backpropagation to calculate Theta_grad parameters
 
 %  output delta
-delta3 = h-y;
+delta3 = h-yNew';
+%size(delta3)
 
-size(z3)
+%  add ones column to z2
+z2 = [ones(size(z2,1),1) z2];
 
-delta2 = Theta2'*delta3.*sigmoidgradient(z2);
+%  delta2 is 26 by 5000 
+delta2 = Theta2'*delta3'.*sigmoidGradient(z2)';
 
+%size(delta2)
 
+%  Find the Gradients using back propagation
+Del2 = delta3'*a2;
+Del1 = delta2*X;
 
+%  git rid of the delta_0 terms
+Del1 = Del1(2:size(Del1,1),:);
+
+%size(Del1)
+%size(Del2)
+
+Theta2_grad = Del2/m;
+Theta1_grad = Del1/m;
 
 % -------------------------------------------------------------
 
