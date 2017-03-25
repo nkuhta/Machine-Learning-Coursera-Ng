@@ -14,6 +14,10 @@
 1.  **Assignment 3 - Multi-class Classification and Neural Networks**  - Main source code folder
 2.  **Topics**	- Loading and plotting handwriting data, compute regularized cost and gradient, one-vs-all algorithm implementation, accuracy, neural network accuracy testing.   
 
+#  Neural Network Learning
+1.  **Assignment 4 - Neural Network Learning**  - Main source code folder
+2.  **Topics**	- Loading and plotting handwriting data, compute regularized cost and gradient using forward and backward propagation, training neural network and compute training set accuracy.   
+
 # Machine Learning References
 1.  **Machine Learning** - Stanford - Andrew Ng (Coursera)   
     https://www.coursera.org/learn/machine-learning
