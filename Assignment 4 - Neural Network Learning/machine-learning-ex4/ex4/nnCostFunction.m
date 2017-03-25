@@ -132,12 +132,22 @@ Del1 = delta2*X;
 %  git rid of the delta_0 terms
 Del1 = Del1(2:size(Del1,1),:);
 
-%size(Del1)
-%size(Del2)
+%size(Del1);
+%size(Theta1);
 
-Theta2_grad = Del2/m;
+%  Gradient without regularization
 Theta1_grad = Del1/m;
+Theta2_grad = Del2/m;
 
+
+%  Add Regularization terms (note fist theta column isn't regularized)
+for i=2:size(Del2,2)
+  Theta2_grad(:,i) = Theta2_grad(:,i)+(lambda/m)*Theta2(:,i);
+end
+
+for i=2:size(Del1,2)
+  Theta1_grad(:,i) = Theta1_grad(:,i)+(lambda/m)*Theta1(:,i);
+end
 % -------------------------------------------------------------
 
 % =========================================================================
