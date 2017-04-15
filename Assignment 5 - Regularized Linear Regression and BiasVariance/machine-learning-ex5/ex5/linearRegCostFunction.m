@@ -20,17 +20,23 @@ grad = zeros(size(theta));
 %
 
 %  cost without lambda
-J=sum((X*theta-y).^2)/2/m;
+%J=sum((X*theta-y).^2)/2/m;
+%
+%%  regularization included
+%  J = J + lambda*theta(2)^2/2/m;
 
-%  regularization included
-  J = J + lambda*theta(2)^2/2/m;
-
+%  cost function (regularized)  
+J = sum((X*theta-y).^2)/2/m + lambda*sum(theta(2:size(theta)).^2)/2/m;
+  
 %  first gradient term (constant)
 grad(1) = 1/m*sum(X*theta-y);
 
 % second gradient term (linear term with lambda regularization)
-grad(2) = 1/m*sum((X*theta-y).*X(:,2))+lambda/m*theta(2);
+%grad(2) = 1/m*sum((X*theta-y).*X(:,2))+lambda/m*theta(2);
 
+for i=2:size(theta)
+  grad(i) = 1/m*sum((X*theta-y).*X(:,i))+lambda/m*theta(i);
+end
 
 
 

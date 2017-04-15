@@ -1,5 +1,5 @@
 function [error_train, error_val] = ...
-    learningCurve(X, y, Xval, yval, lambda)
+    learningCurve(X, y, Xval, yval, theta, lambda)
 %LEARNINGCURVE Generates the train and cross validation set errors needed 
 %to plot a learning curve
 %   [error_train, error_val] = ...
@@ -20,6 +20,7 @@ m = size(X, 1);
 % You need to return these values correctly
 error_train = zeros(m, 1);
 error_val   = zeros(m, 1);
+
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: Fill in this function to return training errors in 
@@ -55,10 +56,23 @@ error_val   = zeros(m, 1);
 
 
 
+%  cost function array 
+%for i=1:m
+%  error_train(i)=sum((X(1:i,:)*theta-y(1:i)).^2)/2/i+lambda*theta(2)^2/2/i;
+%  error_val(i)=sum((Xval(1:i,:)*theta-yval(1:i)).^2)/2/i+lambda*theta(2)^2/2/i;
+%end
 
+%  cost function array 
+%for i=1:m
+%  error_train(i)=sum((X(1:i,:)*theta-y(1:i)).^2)/2/i;
+%  error_val(i)=sum((Xval(1:i,:)*theta-yval(1:i)).^2)/2/i;
+%end
 
-
-
+for i = 1:m
+  [thetaM] = trainLinearReg(X(1:i,:),y(1:i),0);
+  error_train(i) = linearRegCostFunction(X(1:i,:),y(1:i),thetaM,0);
+  error_val(i) = linearRegCostFunction(Xval,yval,thetaM,0);
+end
 % -------------------------------------------------------------
 
 % =========================================================================
