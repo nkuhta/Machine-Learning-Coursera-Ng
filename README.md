@@ -22,6 +22,10 @@
 1.  **Assignment 5 - Regularized Linear Regression and Bias/Variance**  - Main source code folder
 2.  **Topics**	- Linear regression on test data sets.  Bias/Variance investigation on cross validation data as the regularization parameter lambda, number of data points (m), and polynomial degree (n) are changed.  
 
+#  Support Vector Machines
+1.  **Assignment 6 - Support Vector Machines**  - Main source code folder
+2.  **Topics**	- 
+
 # Machine Learning References
 1.  **Machine Learning** - Stanford - Andrew Ng (Coursera)   
     https://www.coursera.org/learn/machine-learning
