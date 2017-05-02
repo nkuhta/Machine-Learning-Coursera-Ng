@@ -50,6 +50,7 @@ C = 1;
 model = svmTrain(X,y,C,@linearKernel,1e-3,20);
 visualizeBoundaryLinear(X,y,model);
 
+
 fprintf('program paused: press key to continue.\n');
 pause; 
 
