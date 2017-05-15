@@ -16,8 +16,8 @@ sim = 0;
 %
 %
 
-
-
+#  gaussian kernel similarity function between vectors (x1,x2) 
+sim=exp(-(x1-x2)'*(x1-x2)/(2*sigma^2));
 
 
 

@@ -23,11 +23,29 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
+vals=[0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30];
+prediction=0;
 
 
+for i=1:length(vals)
+   for j=1:length(vals)
+  
+      C=vals(i)
+      sigma=vals(j)
+      model= svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
+      CVS=mean(svmPredict(model,Xval)==yval)
+      
+      if CVS>prediction 
+          prediction=CVS
+          Cfinal=C
+          sigmaFinal=sigma
 
 
+  end
+end
 
+C=Cfinal;
+sigma=sigmaFinal;
 
 % =========================================================================
 

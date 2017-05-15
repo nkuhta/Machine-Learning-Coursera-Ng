@@ -24,7 +24,7 @@
 
 #  Support Vector Machines
 1.  **Assignment 6 - Support Vector Machines**  - Main source code folder
-2.  **Topics**	- 
+2.  **Topics**	- Linear and Gaussian Kernel SVM modeling of different systems.  Spam filter example.  
 
 # Machine Learning References
 1.  **Machine Learning** - Stanford - Andrew Ng (Coursera)   
